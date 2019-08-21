@@ -1,0 +1,68 @@
+#!/usr/bin/env sh
+
+# POSIX-compatible stuff
+
+# Do nothing if non-interactive
+if [ -z "$PS1" ]; then
+	return
+fi
+
+# XDG base directories
+if [ ! -d "$HOME/.config" ]; then
+	mkdir "$HOME/.config"
+fi
+if [ ! -d "$HOME/.local/share" ]; then
+	mkdir -p "$HOME/.local/share"
+fi
+if [ ! -d "$HOME/.cache" ]; then
+	mkdir "$HOME/.cache"
+fi
+
+XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CONFIG_HOME
+XDG_DATA_HOME="$HOME/.local/share"
+export XDG_DATA_HOME
+XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CACHE_HOME
+
+# Prepend a new path only if the directory exists and not already added to $PATH
+prepend_to_path() {
+	new_path=$1
+
+	if [ -d "$new_path" ] && echo "$PATH" | grep -vq "$new_path"; then
+		PATH="$new_path:$PATH"
+		export PATH
+	fi
+
+	unset new_path
+}
+
+# Flatpak binaries
+prepend_to_path /var/lib/flatpak/exports/bin
+prepend_to_path "$HOME/.local/share/flatpak/exports/bin"
+
+# User binary and script paths
+prepend_to_path "$HOME/.local/bin"
+prepend_to_path "$HOME/.local/script"
+
+# ls
+if ls --color=auto >/dev/null 2>&1; then
+	alias ls='ls -F --color=auto'
+elif ls -G >/dev/null 2>&1; then
+	alias ls='ls -FG'
+else
+	alias ls='ls -F'
+fi
+alias l='ls'
+alias ll='ls -lh'
+alias la='ls -A'
+alias lla='ls -lhA'
+
+# cd
+alias ~='cd ~'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# mkdir
+alias mkdir='mkdir -pv'

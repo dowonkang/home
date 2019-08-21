@@ -1,0 +1,113 @@
+#!/usr/bin/env bash
+
+# bash_prompt
+
+# Inspirations:
+# - https://github.com/necolas/dotfiles/blob/master/shell/bash_prompt
+# - https://github.com/sapegin/dotfiles/blob/bash/includes/bash_prompt.bash
+
+# Colors
+# \033[COLORm or \e[COLORm
+# @see http://www.bashguru.com/2010/01/shell-colors-colorizing-shell-scripts.html
+
+# Color  | Foreground | Background
+# -------+------------+-----------
+# reset  |      0     |      0
+# black  |     30     |     40
+# red    |     31     |     41
+# green  |     32     |     42
+# yellow |     33     |     43
+# blue   |     34     |     44
+# purple |     35     |     45
+# cyan   |     36     |     46
+# white  |     37     |     47
+
+print_git() {
+	local s=""
+	local branch_name=""
+
+	# check if the current directory is in a git repository
+	if [ "$(
+		git rev-parse --is-inside-work-tree &>/dev/null
+		printf "%s" $?
+	)" == 0 ]; then
+
+		# check if the current directory is in .git before running git checks
+		if [ "$(git rev-parse --is-inside-git-dir 2>/dev/null)" == "false" ]; then
+
+			# ensure index is up to date
+			git update-index --really-refresh -q &>/dev/null
+
+			# check for uncommitted changes in the index
+			if ! git diff --quiet --ignore-submodules --cached; then
+				s="$s+"
+			fi
+
+			# check for unstaged changes
+			if ! git diff-files --quiet --ignore-submodules --; then
+				s="$s!"
+			fi
+
+			# check for untracked files
+			if [ -n "$(git ls-files --others --exclude-standard)" ]; then
+				s="$s?"
+			fi
+
+			# check for stashed files
+			if git rev-parse --verify refs/stash &>/dev/null; then
+				s="$s$"
+			fi
+
+		fi
+
+		# get the short symbolic ref
+		# if HEAD isn't a symbolic ref, get the short SHA
+		# otherwise, just give up
+		branch_name="$(git symbolic-ref --quiet --short HEAD 2>/dev/null ||
+			git rev-parse --short HEAD 2>/dev/null ||
+			printf "(unknown)")"
+
+		local git_status="$branch_name$s"
+		[ -n "$git_status" ] && git_status=" [$git_status]"
+
+		echo -e "\\[\\033[34m\\]$git_status\\[\\033[0m\\]"
+	else
+		return
+	fi
+}
+
+print_user() {
+	local is_remote=
+	[ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] && is_remote=1
+
+	local host_prompt=
+	[ -n "$is_remote" ] && host_prompt="@$(hostname)"
+
+	# show user name only when showing host name
+	local user_prompt=
+	[ -n "$host_prompt" ] && user_prompt="$USER"
+
+	local prompt="$user_prompt$host_prompt"
+
+	if [ -n "$prompt" ]; then
+		echo "$prompt "
+	else
+		return
+	fi
+}
+
+set_prompts() {
+	# shellcheck disable=SC2089
+	local prompt_symbol="\`if [ \$? = 0 ]; then echo -e \"\\[\\033[33m\\]\"; else echo -e \"\\[\\033[31m\\]\"; fi\`\$\\[\\e[0m\\] "
+
+	local git_prompt=
+	git_prompt=$(print_git)
+	local user_prompt=
+	user_prompt=$(print_user)
+	local first_line="\\w$git_prompt"
+	local second_line="$user_prompt$prompt_symbol"
+
+	export PS1="$first_line\\n$second_line"
+}
+
+PROMPT_COMMAND=set_prompts
