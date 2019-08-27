@@ -66,3 +66,8 @@ alias ....='cd ../../..'
 
 # mkdir
 alias mkdir='mkdir -pv'
+
+# Additional aliases
+if [ -f "$HOME/.config/aliases" ]; then
+	. "$HOME/.config/aliases"
+fi
