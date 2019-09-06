@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	# shellcheck disable=1091
+	. /etc/bashrc
+fi
+
 if [ -f "$HOME/.config/shrc" ]; then
 	# shellcheck disable=1090
 	. "$HOME/.config/shrc"
