@@ -107,10 +107,10 @@ set_prompts() {
 	# https://gnunn1.github.io/tilix-web/manual/vteconfig/
 	local vte_pwd=
 	if command -v __vte_osc7 >/dev/null 2>&1; then
-		vte_pwd="$(__vte_osc7)"
+		vte_pwd="$(__vte_osc7)]"
 	fi
-	local first_line="\\w$git_prompt"
-	local second_line="$user_prompt$prompt_symbol$vte_pwd"
+	local first_line="\\w$git_prompt$vte_pwd"
+	local second_line="$user_prompt$prompt_symbol"
 	export PS1="$first_line\\n$second_line"
 }
 
