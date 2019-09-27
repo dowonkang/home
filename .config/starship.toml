@@ -1,3 +1,7 @@
+[character]
+# Looks best with Nerd Fonts
+symbol = " "
+
 [directory]
 truncate_to_repo = false
 
