@@ -1,6 +1,3 @@
-# PATH
-prepend_to_path /usr/local/sbin "$HOME/.local/bin"
-
 # ls
 if ls --color=auto >/dev/null 2>&1
 	alias ls='ls -F --color=auto'
@@ -21,8 +18,3 @@ alias ....='cd ../../..'
 
 # mkdir
 alias mkdir='mkdir -pv'
-
-# Starship prompt
-if command -s starship >/dev/null
-	eval (starship init fish)
-end
