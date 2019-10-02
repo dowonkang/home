@@ -22,8 +22,23 @@ Plug 'junegunn/goyo.vim'
 Plug 'dag/vim-fish'
 call plug#end()
 
+" Automatically reload vimrc after save
+augroup AutoSource
+	autocmd!
+	autocmd BufWritePost $MYVIMRC source $MYVIMRC | redraw
+augroup END
+
 " Show line numbers
+" https://jeffkreeftmeijer.com/vim-number/
 set number relativenumber
+augroup AutoRelativeNumber
+	autocmd!
+	autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+	autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+
+" Show cursor position
+set ruler
 
 " Cursor line
 set cursorline
@@ -65,3 +80,6 @@ highlight Whitespace ctermfg=DarkGray
 highlight NonText ctermfg=DarkGray
 set listchars=tab:▸\ ,space:·,eol:¬
 set list
+
+" Enable syntac highlighting
+syntax enable
