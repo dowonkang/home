@@ -25,4 +25,4 @@ else
 	get_it
 fi
 
-unset new_version
+unset new_version get_it

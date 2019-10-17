@@ -16,8 +16,7 @@ if command -v starship >/dev/null 2>&1; then
 		echo "Upgrading starship: v$old_version => v$new_version"
 		get_it
 	fi
-	unset old_version
-	unset new_version
+	unset old_version new_version
 else
 	echo "Downloading latest starship:"
 	get_it
