@@ -83,3 +83,14 @@ set list
 
 " Enable syntac highlighting
 syntax enable
+
+" Default column width
+set textwidth=80
+set colorcolumn=+1
+
+" 72 columns for git commits
+augroup GitCommit
+	autocmd!
+	autocmd FileType gitcommit set textwidth=72
+	autocmd FileType gitcommit set colorcolumn+=51
+augroup END
