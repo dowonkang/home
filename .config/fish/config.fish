@@ -18,3 +18,9 @@ alias ....='cd ../../..'
 
 # mkdir
 alias mkdir='mkdir -pv'
+
+# git
+if test $LANG != 'en_US.UTF-8'
+	and locale -a | grep --extended-regexp 'en_US\.(utf8|UTF\-8)' >/dev/null
+	alias git='env LANG=en_US.UTF-8 git'
+end

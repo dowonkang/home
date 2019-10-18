@@ -68,6 +68,12 @@ alias ....='cd ../../..'
 # mkdir
 alias mkdir='mkdir -pv'
 
+# git
+if [ "$LANG" != "en_US.UTF-8" ] &&
+	locale -a | grep --extended-regexp 'en_US\.(utf8|UTF\-8)' >/dev/null; then
+	alias git='LANG=en_US.UTF-8 git'
+fi
+
 # Additional aliases
 if [ -f "$HOME/.config/aliases" ]; then
 	. "$HOME/.config/aliases"
