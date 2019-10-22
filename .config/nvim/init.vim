@@ -86,6 +86,7 @@ syntax enable
 
 " Default column width
 set textwidth=80
+highlight ColorColumn ctermbg=DarkGray
 set colorcolumn=+1
 
 " 72 columns for git commits
