@@ -1,3 +1,4 @@
 fish_variables
 __bass.py
 bass.fish
+.config/git/*.config

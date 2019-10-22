@@ -1,0 +1,3 @@
+[commit]
+	verbose = true
+	template = ~/.config/git/commit.template
