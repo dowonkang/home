@@ -6,10 +6,18 @@ else if ls -G >/dev/null 2>&1
 else
 	alias ls='ls -F'
 end
-alias l='ls'
-alias ll='ls -lh'
-alias la='ls -A'
-alias lla='ls -lAh'
+if command -s exa >/dev/null 2>&1
+	alias exa='exa -F'
+	alias l='exa'
+	alias ll='exa -l'
+	alias la='exa -a'
+	alias lla='exa -la'
+else
+	alias l='ls'
+	alias ll='ls -lh'
+	alias la='ls -A'
+	alias lla='ls -lAh'
+end
 
 # cd
 alias ..='cd ..'
