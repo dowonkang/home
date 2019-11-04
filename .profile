@@ -1,9 +1,9 @@
 #!/usr/bin/env sh
 # executed by Bourne-compatible login shells.
 
-if [ -f "$HOME/.config/shrc" ]; then
+if [ -f "$HOME/.config/sh/config.sh" ]; then
 	# shellcheck disable=1090
-	. "$HOME/.config/shrc"
+	. "$HOME/.config/sh/config.sh"
 fi
 
 # Prompt

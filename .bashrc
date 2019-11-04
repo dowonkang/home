@@ -6,9 +6,9 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-if [ -f "$HOME/.config/shrc" ]; then
+if [ -f "$HOME/.config/sh/config.sh" ]; then
 	# shellcheck disable=1090
-	. "$HOME/.config/shrc"
+	. "$HOME/.config/sh/config.sh"
 fi
 
 # Don't put duplicate lines or lines starting with space in the history
@@ -29,6 +29,14 @@ shopt -s autocd 2>/dev/null
 
 # Prompt
 if command -v starship >/dev/null 2>&1; then
+	function mark_toolbox() {
+		if [ "$(uname -n)" = "toolbox" ]; then
+			echo "[toolbox]"
+		fi
+	}
+	# shellcheck disable=SC2034
+	starship_precmd_user_func="mark_toolbox"
+
 	eval "$(starship init bash)"
 elif [ -f "$HOME/.config/bash_prompt" ]; then
 	# shellcheck disable=1090
