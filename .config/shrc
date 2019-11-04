@@ -46,6 +46,10 @@ prepend_to_path "$HOME/.local/share/flatpak/exports/bin"
 prepend_to_path "$HOME/.local/bin"
 prepend_to_path "$HOME/.local/script"
 
+# 3rd-party binaries
+prepend_to_path "$HOME/.cabal/bin"
+prepend_to_path "$HOME/.cargo/bin"
+
 # ls
 if ls --color=auto >/dev/null 2>&1; then
 	alias ls='ls -F --color=auto'
