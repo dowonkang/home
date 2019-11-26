@@ -1,3 +1,3 @@
 if command -s starship >/dev/null
-	eval (starship init fish)
+	starship init fish | source
 end
