@@ -1,3 +1,3 @@
-if command -s starship >/dev/null
+if test (command -s starship)
 	starship init fish | source
 end

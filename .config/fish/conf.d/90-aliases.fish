@@ -6,7 +6,7 @@ else if ls -G >/dev/null 2>&1
 else
 	alias ls='ls -F'
 end
-if command -s exa >/dev/null 2>&1
+if test (command -s exa)
 	alias exa='exa -F'
 	alias l='exa'
 	alias ll='exa -l'

@@ -1,3 +1,3 @@
-if command -s brew >/dev/null
+if test (command -s brew)
 	set -x HOMEBREW_NO_ANALYTICS 1
 end
