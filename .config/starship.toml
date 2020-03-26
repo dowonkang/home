@@ -18,3 +18,7 @@ style = "bold yellow"
 
 [aws]
 disabled = true
+
+[env_var]
+variable = "TOOLBOX_EMOJI"
+style = "red"
