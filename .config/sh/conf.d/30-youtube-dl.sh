@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/env sh
 
 if command -v youtube-dl >/dev/null; then
 	alias ytdl-mp3='youtube-dl -x --audio-format mp3 --embed-thumbnail -o '\''%(title)s.%(ext)s'\'''

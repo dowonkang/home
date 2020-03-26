@@ -1,3 +1,5 @@
 #!/usr/bin/env sh
 
-prepend_to_path "$HOME/.cabal/bin"
+if command -v cabal >/dev/null; then
+	prepend_to_path "$HOME/.cabal/bin"
+fi
