@@ -1,4 +1,8 @@
+# local git configs
+.config/git/*.config
+
+# fish shell
 fish_variables
 __bass.py
 bass.fish
-.config/git/*.config
+br.fish

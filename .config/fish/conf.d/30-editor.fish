@@ -1,11 +1,11 @@
 if test -z "$EDITOR"
-	if test (command -s emacs)
-		set -x EDITOR "emacs"
-	else if test (command -s nvim)
-		set -x EDITOR "nvim"
-	else if test (command -s vim)
-		set -x EDITOR "vim"
-	else if test (command -s vi)
-		set -x EDITOR "vi"
-	end
+    if command -sq emacs
+        set -x EDITOR "emacs"
+    else if command -sq nvim
+        set -x EDITOR "nvim"
+    else if command -sq vim
+        set -x EDITOR "vim"
+    else if command -sq vi
+        set -x EDITOR "vi"
+    end
 end
