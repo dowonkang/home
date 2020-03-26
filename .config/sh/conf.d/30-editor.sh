@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/env sh
 
 if [ -z "$EDITOR" ]; then
 	if command -v nvim >/dev/null; then
