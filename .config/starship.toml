@@ -7,3 +7,14 @@ truncate_to_repo = false
 
 [package]
 disabled = true
+
+[[battery.display]]
+threshold = 10
+style = "bold red"
+
+[[battery.display]]
+threshold = 30
+style = "bold yellow"
+
+[aws]
+disabled = true
