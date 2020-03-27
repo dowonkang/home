@@ -1,6 +1,0 @@
-#!/usr/bin/env sh
-
-AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME/aws/credentials"
-export AWS_SHARED_CREDENTIALS_FILE
-AWS_CONFIG_FILE="$XDG_CONFIG_HOME/aws/config"
-export AWS_CONFIG_FILE

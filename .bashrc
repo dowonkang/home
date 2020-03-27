@@ -6,11 +6,6 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-if [ -f "$HOME/.config/sh/config.sh" ]; then
-	# shellcheck disable=1090
-	. "$HOME/.config/sh/config.sh"
-fi
-
 # Don't put duplicate lines or lines starting with space in the history
 export HISTCONTROL=ignoreboth
 
@@ -27,17 +22,7 @@ shopt -s checkwinsize 2>/dev/null
 # Change directory without cd command
 shopt -s autocd 2>/dev/null
 
-# Prompt
-if command -v starship >/dev/null 2>&1; then
-	eval "$(starship init bash)"
-elif [ -f "$HOME/.config/bash_prompt" ]; then
+if [ -f "$HOME/.config/sh/config.sh" ]; then
 	# shellcheck disable=1090
-	. "$HOME/.config/bash_prompt"
-else
-	if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-		PS1="\\u@\\h:\\w \\$ "
-	else
-		PS1="\\w \\$ "
-	fi
-	export PS1
+	. "$HOME/.config/sh/config.sh"
 fi
