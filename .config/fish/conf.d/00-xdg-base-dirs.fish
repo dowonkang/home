@@ -1,14 +1,14 @@
 # XDG base directories
 if test ! -d "$HOME/.config"
-	mkdir -pv "$HOME/.config"
+    mkdir -pv "$HOME/.config"
 end
 
 if test ! -d "$HOME/.local/share"
-	mkdir -pv "$HOME/.local/share"
+    mkdir -pv "$HOME/.local/share"
 end
 
 if test ! -d "$HOME/.cache"
-	mkdir -pv "$HOME/.cache"
+    mkdir -pv "$HOME/.cache"
 end
 
 set -x XDG_CONFIG_HOME "$HOME/.config"
