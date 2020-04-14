@@ -27,6 +27,11 @@ alias ....='cd ../../..'
 # mkdir
 alias mkdir='mkdir -pv'
 
+# ask before dangerous operations
+alias mv='mv -i'
+alias cp='cp -i'
+alias rm='rm -i'
+
 # git
 if test $LANG != 'en_US.UTF-8'
     and command -sq locale

@@ -30,6 +30,11 @@ alias ....='cd ../../..'
 # mkdir
 alias mkdir='mkdir -pv'
 
+# ask before dangerous operations
+alias mv='mv -i'
+alias cp='cp -i'
+alias rm='rm -i'
+
 # git
 if [ "$LANG" != "en_US.UTF-8" ] &&
 	command -v locale >/dev/null 2>&1 &&
