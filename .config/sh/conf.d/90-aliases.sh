@@ -35,6 +35,9 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias rm='rm -i'
 
+# unzip
+alias unzipkr='unzip -O cp949'
+
 # git
 if [ "$LANG" != "en_US.UTF-8" ] &&
 	command -v locale >/dev/null 2>&1 &&
