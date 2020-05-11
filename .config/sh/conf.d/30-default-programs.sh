@@ -48,3 +48,11 @@ if [ -z "$PAGER" ]; then
 		export PAGER
 	fi
 fi
+
+# https://github.com/dandavison/delta
+if [ -z "$GIT_PAGER" ]; then
+	if command -v delta >/dev/null; then
+		GIT_PAGER="$(command -v delta)"
+		export GIT_PAGER
+	fi
+fi

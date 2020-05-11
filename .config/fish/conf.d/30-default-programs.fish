@@ -33,3 +33,8 @@ if test -z "$PAGER"
     and command -sq less
     set -x PAGER (command -s less)
 end
+
+# https://github.com/dandavison/delta
+if command -sq delta
+    set -x GIT_PAGER (command -s delta)
+end
