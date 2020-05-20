@@ -6,3 +6,4 @@ fish_variables
 __bass.py
 bass.fish
 br.fish
+.config/fish/completions
