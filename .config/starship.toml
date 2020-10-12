@@ -1,9 +1,10 @@
 [character]
 # Looks best with Nerd Fonts
-symbol = " "
+success_symbol = " "
+error_symbol = "[ ](red)"
 
 [directory]
-truncate_to_repo = false
+truncate_to_repo = true
 
 [package]
 disabled = true
@@ -18,7 +19,3 @@ style = "bold yellow"
 
 [aws]
 disabled = true
-
-[env_var]
-variable = "TOOLBOX_EMOJI"
-style = "red"
