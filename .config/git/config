@@ -1,10 +1,12 @@
+[init]
+defaultBranch  = main
 [user]
-	useConfigOnly  = true
+useConfigOnly   = true
 [commit]
-	verbose  = true
-	template = ~/.config/git/commit.template
+verbose   = true
+template  = ~/.config/git/commit.template
 [include]
-	path = local.config
+path  = local.config
 # in local.config file
 # [user]
 # 	name = User Name
@@ -13,3 +15,8 @@
 # 	path = group-a.config
 # [includeIf "gitdir:~/**/group-b/"]
 # 	path = group-b.config
+# [core]
+# on windows
+#	autocrlf = true
+# on everything else
+#	autocrlf = input
