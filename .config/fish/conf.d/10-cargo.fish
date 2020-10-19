@@ -6,7 +6,7 @@ if command -sq cargo
         mkdir -p "$XDG_CONFIG_HOME/cargo"
     end
     if test -d "$XDG_CONFIG_HOME/cargo"
-        set -x CARGO_HOME "$XDG_CONFIG_HOME/cargo"
+        set -gx CARGO_HOME "$XDG_CONFIG_HOME/cargo"
     end
     if test -n "$CARGO_HOME"
         prepend_to_path "$CARGO_HOME/bin"
