@@ -21,16 +21,3 @@
 	required = true
 [include]
 	path = local.gitconfig
-# in local.config file
-# [user]
-# 	name = User Name
-# 	email = user@example.com
-# [includeIf "gitdir:~/**/group-a/"]
-# 	path = group-a.config
-# [includeIf "gitdir:~/**/group-b/"]
-# 	path = group-b.config
-# [core]
-# on windows
-#	autocrlf = true
-# on everything else
-#	autocrlf = input

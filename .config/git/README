@@ -1,0 +1,11 @@
+Use local.gitconfig file for local configurations
+
+Examples:
+
+[user]
+	name = User Name
+	email = user@example.com
+[includeIf "gitdir:~/**/group-a/"]
+	path = group-a.gitconfig
+[includeIf "gitdir:~/**/group-b/"]
+	path = group-b.gitconfig
