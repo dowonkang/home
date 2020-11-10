@@ -1,5 +1,5 @@
 # local git configs
-.config/git/*.config
+.config/git/*.gitconfig
 
 # fish shell
 fish_variables
