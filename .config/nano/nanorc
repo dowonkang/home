@@ -1,39 +1,39 @@
-# See NANORC(5)
+## See NANORC(5)
 
-# Non-configurable features and their toggle commands
-# - Whitespace display: M-P
-# - Enable/disable syntax highlighting: M-Y
+## Non-configurable features and their toggle commands
+## - Whitespace display: M-P
+## - Enable/disable syntax highlighting: M-Y
 
-# Automatically indent a newly created line to the same number of tabs and/or spaces as the previous line (or as the next line if the previous line is the beginning of a paragraph).
-# Toggle: M-I
+## Automatically indent a newly created line to the same number of tabs and/or spaces as the previous line (or as the next line if the previous line is the beginning of a paragraph).
+## Toggle: M-I
 set autoindent
 
-# Constantly display the cursor position in the status bar. This overrides the option quickblank.
-# Toggle: M-C
+## Constantly display the cursor position in the status bar. This overrides the option quickblank.
+## Toggle: M-C
 set constantshow
 
-# Display line numbers to the left of the text area. (Any line with an anchor additionally gets a mark in the margin.)
-# Toggle: M-N
+## Display line numbers to the left of the text area. (Any line with an anchor additionally gets a mark in the margin.)
+## Toggle: M-N
 set linenumbers
 
-# Don’t display the two help lines at the bottom of the screen.
-# Toggle M-X
+## Don’t display the two help lines at the bottom of the screen.
+## Toggle M-X
 # set nohelp
 
-# Make the Home key smarter. When Home is pressed anywhere but at the very beginning of non-whitespace characters on a line, the cursor will jump to that beginning (either forwards or backwards). If the cursor is already at that position, it will jump to the true beginning of the line.
-# Toggle: M-H
+## Make the Home key smarter. When Home is pressed anywhere but at the very beginning of non-whitespace characters on a line, the cursor will jump to that beginning (either forwards or backwards). If the cursor is already at that position, it will jump to the true beginning of the line.
+## Toggle: M-H
 set smarthome
 
-# Use the top-right corner of the screen for showing some state flags: I when auto-indenting, M when the mark is on, L when hard-wrapping (breaking long lines), R when recording a macro, and S when soft-wrapping. When the buffer is modified, a star (*) is shown after the filename in the center of the title bar.
+## Use the top-right corner of the screen for showing some state flags: I when auto-indenting, M when the mark is on, L when hard-wrapping (breaking long lines), R when recording a macro, and S when soft-wrapping. When the buffer is modified, a star (*) is shown after the filename in the center of the title bar.
 set stateflags
 
-# Use a tab size of number columns. The value of number must be greater than 0. The default value is 8.
+## Use a tab size of number columns. The value of number must be greater than 0. The default value is 8.
 set tabsize 2
 
-# Convert typed tabs to spaces.
-# Toggle: M-O
+## Convert typed tabs to spaces.
+## Toggle: M-O
 set tabstospaces
 
-# Syntax files
-# git clone https://github.com/scopatz/nanorc.git ~/.local/share/nano
+## Syntax files
+## git clone https://github.com/scopatz/nanorc.git ~/.local/share/nano
 include "~/.local/share/nano/*.nanorc"
