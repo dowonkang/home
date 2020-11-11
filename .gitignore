@@ -7,3 +7,7 @@ __bass.py
 bass.fish
 br.fish
 .config/fish/completions
+
+# local shell configs
+999-local.sh
+999-local.fish
