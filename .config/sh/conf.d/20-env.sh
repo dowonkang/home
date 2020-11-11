@@ -23,7 +23,7 @@ export AWS_CONFIG_FILE
 # Opt-out Homebrew analytics
 # https://docs.brew.sh/Analytics#opting-out
 if command -v brew >/dev/null; then
-	HOMEBREW_NO_ANALYTICS 1
+	HOMEBREW_NO_ANALYTICS=1
 	export HOMEBREW_NO_ANALYTICS
 fi
 
