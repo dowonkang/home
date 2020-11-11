@@ -1,10 +1,12 @@
+# See https://starship.rs/config/
+
 [character]
 # Looks best with Nerd Fonts
 success_symbol = " "
 error_symbol = "[ ](red)"
 
 [directory]
-truncate_to_repo = true
+truncation_symbol = "…/"
 
 [package]
 disabled = true
