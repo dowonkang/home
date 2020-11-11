@@ -1,5 +1,6 @@
 function nvm
-    if test -e "~/.config/nvm/nvm.sh"
-        bass source ~/.config/nvm/nvm.sh --no-use ';' nvm $argv
+if test -n "$NVM_DIR"
+    and test -e "$NVM_DIR/nvm.sh"
+    bass source "$NVM_DIR/nvm.sh" --no-use ';' nvm $argv
     end
 end
