@@ -26,3 +26,8 @@ style = "bold yellow"
 
 [aws]
 disabled = true
+
+[env_var]
+symbol = ""
+variable = "TOOLBOX_PATH"
+format = "via $symbol"

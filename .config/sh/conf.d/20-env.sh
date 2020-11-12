@@ -26,9 +26,3 @@ if command -v brew >/dev/null; then
 	HOMEBREW_NO_ANALYTICS=1
 	export HOMEBREW_NO_ANALYTICS
 fi
-
-# Used to show an icon in starship prompt when inside toolbox containers
-if [ -n "$TOOLBOX_PATH" ]; then
-	TOOLBOX_EMOJI=""
-	export TOOLBOX_EMOJI
-fi
