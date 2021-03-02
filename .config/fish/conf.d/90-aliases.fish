@@ -34,10 +34,3 @@ alias rm='rm -i'
 
 # unzip
 alias unzipkr='unzip -O cp949'
-
-# git
-if test $LANG != 'en_US.UTF-8'
-    and command -sq locale
-    and locale -a | grep --extended-regexp 'en_US\.(utf8|UTF\-8)' >/dev/null
-    alias git='env LANG=en_US.UTF-8 git'
-end
