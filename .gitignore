@@ -11,3 +11,6 @@ br.fish
 # local shell configs
 999-local.sh
 999-local.fish
+
+# Downloaded .tar.gz files
+*.tar.gz
