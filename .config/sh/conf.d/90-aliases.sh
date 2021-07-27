@@ -38,6 +38,12 @@ alias rm='rm -i'
 # unzip
 alias unzipkr='unzip -O cp949'
 
+# open
+if ! command -v open >/dev/null 2>&1 &&
+	command -v xdg-open >/dev/null 2>&1; then
+	alias open='xdg-open'
+fi
+
 # git
 if [ "$LANG" != "en_US.UTF-8" ] &&
 	command -v locale >/dev/null 2>&1 &&

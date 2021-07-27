@@ -6,7 +6,8 @@ else if ls -G >/dev/null 2>&1
 else
     alias ls='ls -F'
 end
-if command -sq exa
+if command -q exa
+
     alias exa='exa -F'
     alias l='exa'
     alias ll='exa -l'
@@ -34,3 +35,9 @@ alias rm='rm -i'
 
 # unzip
 alias unzipkr='unzip -O cp949'
+
+# open
+if not command -q open
+    and command -q xdg-open
+    alias open='xdg-open'
+end
