@@ -1,4 +1,7 @@
-if test -d "$HOME/.config/nvm"
+if test -d "$HOME/.config/fnm"
+    and test -e "$HOME/.config/fnm/fnm"
+    fnm env | source
+else if test -d "$HOME/.config/nvm"
     and test -e "$HOME/.config/nvm/nvm.sh"
     and functions -q nvm
     and functions -q bass
