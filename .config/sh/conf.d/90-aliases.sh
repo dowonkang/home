@@ -2,6 +2,7 @@
 
 # ls
 if ls --color=auto >/dev/null 2>&1; then
+	# shellcheck disable=SC2262
 	alias ls='ls -F --color=auto'
 elif ls -G >/dev/null 2>&1; then
 	alias ls='ls -FG'
@@ -33,7 +34,7 @@ alias mkdir='mkdir -pv'
 # ask before dangerous operations
 alias mv='mv -i'
 alias cp='cp -i'
-alias rm='rm -i'
+alias rm='rm -I'
 
 # unzip
 alias unzipkr='unzip -O cp949'
@@ -53,6 +54,6 @@ fi
 
 # Additional aliases
 if [ -f "$HOME/.config/aliases" ]; then
-	# shellcheck disable=SC1090
+	# shellcheck disable=SC1091
 	. "$HOME/.config/aliases"
 fi
