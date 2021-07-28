@@ -20,4 +20,4 @@
 	process = git-lfs filter-process
 	required = true
 [include]
-	path = local.gitconfig
+	path = config.local
