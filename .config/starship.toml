@@ -1,20 +1,11 @@
 # See https://starship.rs/config/
 
-[character]
-# Looks best with Nerd Fonts
-success_symbol = " "
-error_symbol = "[ ](red)"
 
 [directory]
 truncation_symbol = "…/"
 
 [package]
 disabled = true
-
-[battery]
-full_symbol = ""
-charging_symbol = ""
-discharging_symbol = ""
 
 [[battery.display]]
 threshold = 10
@@ -27,7 +18,18 @@ style = "bold yellow"
 [aws]
 disabled = true
 
-[env_var]
-symbol = ""
-variable = "TOOLBOX_PATH"
-format = "via $symbol"
+# Configs below look best with Nerd Fonts
+
+# [character]
+# success_symbol = " "
+# error_symbol = "[ ](red)"
+
+# [battery]
+# full_symbol = ""
+# charging_symbol = ""
+# discharging_symbol = ""
+
+# [env_var]
+# symbol = ""
+# variable = "TOOLBOX_PATH"
+# format = "via $symbol"
