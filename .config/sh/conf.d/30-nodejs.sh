@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 # shellcheck disable=SC1090
 
-if [ -d "$HOME/.config/fnm" ] && [ -s "$HOME/.config/fnm/fnm" ]; then
-	prepend_to_path "$HOME/.config/fnm"
+if [ -d "$HOME/.local/bin" ] && [ -s "$HOME/.local/bin/fnm" ]; then
+	prepend_to_path "$HOME/.local/bin"
 	eval "$(fnm env)"
 elif [ -d "$HOME/.config/nvm" ] && [ -s "$HOME/.config/nvm/nvm.sh" ]; then
 	NVM_DIR="$HOME/.config/nvm"

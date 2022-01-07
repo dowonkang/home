@@ -1,6 +1,6 @@
-if test -d "$HOME/.config/fnm"
-    and test -e "$HOME/.config/fnm/fnm"
-    prepend_to_path "$HOME/.config/fnm"
+if test -d "$HOME/.local/bin"
+    and test -e "$HOME/.local/bin/fnm"
+    prepend_to_path "$HOME/.local/bin"
     fnm env | source
 else if test -d "$HOME/.config/nvm"
     and test -e "$HOME/.config/nvm/nvm.sh"
