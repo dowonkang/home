@@ -1,14 +1,10 @@
 #!/usr/bin/env sh
 
-dest="$HOME/.local/bin/"
+bin_dir="$HOME/.local/bin/"
+output_path="$bin_dir/pfetch"
+file_url="https://raw.githubusercontent.com/dylanaraps/pfetch/master/pfetch"
 
-curl --remote-name https://raw.githubusercontent.com/dylanaraps/pfetch/master/pfetch &&
-	chmod u+x pfetch
+curl --progress-bar --location "$file_url" --create-dirs --output "$output_path" &&
+	chmod u+x "$output_path"
 
-if [ ! -d "$dest" ]; then
-	mkdir -p "$dest"
-fi
-
-mv ./pfetch "$dest"
-
-unset dest
+unset file_url output_path bin_dir
