@@ -1,8 +1,16 @@
 #!/usr/bin/env sh
-# https://github.com/ccontavalli/ssh-ident
+# See https://github.com/ccontavalli/ssh-ident
 
-if [ ! -d "$HOME/.local/bin" ]; then
-	mkdir -p "$HOME/.local/bin"
+bin_dir="$HOME/.local/bin"
+output_path="$bin_dir/ssh"
+
+if [ ! -d "$bin_dir" ]; then
+	mkdir -p "$bin_dir"
 fi
 
-wget -O "$HOME/.local/bin/ssh" goo.gl/MoJuKB; chmod 0755 "$HOME/.local/bin/ssh"
+curl --progress-bar --location "https://raw.githubusercontent.com/ccontavalli/ssh-ident/master/ssh-ident" \
+	--output "$output_path" &&
+	chmod 0755 "$output_path"
+
+unset output_path
+unset bin_dir
