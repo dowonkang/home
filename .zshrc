@@ -6,6 +6,9 @@ if [ -f /etc/zshrc ]; then
 	. /etc/zshrc
 fi
 
+# Change directory without cd command
+setopt autocd
+
 if [ -f "$HOME/.config/sh/config.sh" ]; then
 	# shellcheck disable=1090
 	. "$HOME/.config/sh/config.sh"
