@@ -26,3 +26,9 @@ if command -v brew >/dev/null; then
 	HOMEBREW_NO_ANALYTICS=1
 	export HOMEBREW_NO_ANALYTICS
 fi
+
+# BAT theme
+if command -v bat >/dev/null; then
+	BAT_THEME="base16"
+	export BAT_THEME
+fi
