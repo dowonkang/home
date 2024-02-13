@@ -32,9 +32,9 @@ alias ....='cd ../../..'
 alias mkdir='mkdir -pv'
 
 # ask before dangerous operations
-alias mv='mv -i'
-alias cp='cp -i'
-alias rm='rm -I'
+# alias mv='mv -i'
+# alias cp='cp -i'
+# alias rm='rm -I'
 
 # unzip
 alias unzipkr='unzip -O cp949'
