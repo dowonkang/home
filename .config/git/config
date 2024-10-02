@@ -29,3 +29,5 @@
 	required = true
 [include]
 	path = local.gitconfig
+[http]
+	postBuffer = 524288000
