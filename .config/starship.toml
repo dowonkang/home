@@ -18,19 +18,3 @@ style = "bold yellow"
 
 [aws]
 disabled = true
-
-# Configs below look best with Nerd Fonts
-
-# [character]
-# success_symbol = " "
-# error_symbol = "[ ](red)"
-
-# [battery]
-# full_symbol = ""
-# charging_symbol = ""
-# discharging_symbol = ""
-
-# [env_var]
-# symbol = ""
-# variable = "TOOLBOX_PATH"
-# format = "via $symbol"
