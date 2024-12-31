@@ -1,1 +1,19 @@
 * text=auto
+
+# use exiftool for image diff
+# git config --global diff.exif.textconv=exiftool
+# see:
+# - https://exiftool.org/
+# - https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes
+*.avif diff=exif
+*.bmp diff=exif
+*.gif diff=exif
+*.heic diff=exif
+*.heif diff=exif
+*.ico diff=exif
+*.jpeg diff=exif
+*.jpg diff=exif
+*.png diff=exif
+*.tif diff=exif
+*.tiff diff=exif
+*.webp diff=exif

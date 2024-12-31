@@ -31,3 +31,5 @@
 	path = local.gitconfig
 [http]
 	postBuffer = 524288000
+[diff "exif"]
+	textconv = exiftool
