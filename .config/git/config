@@ -1,13 +1,29 @@
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tags]
+	sort = version:refname
 [init]
 	defaultBranch = main
 [push]
+	default = simple
 	autoSetupRemote = true
+	followTags = true
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
 [pull]
 	rebase = false
 [core]
 	editor = /usr/bin/vim
 [merge]
-	conflictstyle = diff3
+	conflictstyle = zdiff3 # diff3 if git < v2.3
+[rebase]
+	autoSquash = true
+	autoStash = true
+	updateRefs = true
 [user]
 	useConfigOnly = true
 [commit]
@@ -31,5 +47,17 @@
 	path = local.gitconfig
 [http]
 	postBuffer = 524288000
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
 [diff "exif"]
 	textconv = exiftool
+[help]
+	autocorrect = prompt
+[rerere]
+	enabled = true
+	autoupdate = true
+
+# Ref: https://blog.gitbutler.com/how-git-core-devs-configure-git/
