@@ -3,7 +3,7 @@
 [branch]
 	sort = -committerdate
 [tags]
-	sort = version:refname
+	sort = -version:refname
 [init]
 	defaultBranch = main
 [push]
@@ -15,7 +15,7 @@
 	pruneTags = true
 	all = true
 [pull]
-	rebase = false
+	rebase = true
 [core]
 	editor = /usr/bin/vim
 [merge]
