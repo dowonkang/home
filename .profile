@@ -3,7 +3,7 @@
 
 # Prepend bin directories to PATH if they exist and are not already included
 for dir in /usr/local/sbin "$HOME/.local/bin"; do
-	if [ -d "$dir" ] && echo "$PATH" | grep -vq "$dir"; then
+	if [ -d "$dir" ] && case ":$PATH:" in *":$dir:"*) false;; *) true;; esac; then
 		PATH="$dir:$PATH"
 	fi
 done
