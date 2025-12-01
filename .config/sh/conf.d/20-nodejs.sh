@@ -4,10 +4,6 @@
 NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
 export NODE_REPL_HISTORY
 
-if [ -d "$HOME/.local/bin" ] && [ -s "$HOME/.local/bin/fnm" ]; then
-	prepend_to_path "$HOME/.local/bin"
-fi
-
 if command -v fnm >/dev/null; then
 	eval "$(fnm env --use-on-cd)"
 fi
