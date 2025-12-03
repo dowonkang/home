@@ -15,7 +15,7 @@
 	pruneTags = true
 	all = true
 [pull]
-	rebase = true
+	rebase = false
 [core]
 	editor = /usr/bin/vim
 [merge]
@@ -57,7 +57,7 @@
 [help]
 	autocorrect = prompt
 [rerere]
-	enabled = true
+	enabled = false
 	autoupdate = true
 
 # Ref: https://blog.gitbutler.com/how-git-core-devs-configure-git/
