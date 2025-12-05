@@ -1,0 +1,18 @@
+syntax on " enable syntax highlighting
+
+set autoindent " automatically indent new lines
+set smartindent " intelligently indent based on context
+set shiftwidth=2 " number of spaces for indentation
+set tabstop=2 " number of spaces per tab character
+set expandtab " convert tabs to spaces
+
+set number " show line numbers
+set relativenumber " show relative line numbers
+set ruler " show cursor position on status line
+set cursorline " highlight the current cursor line
+set showmatch " highlight matching brackets
+set showmode " display current mode in status line
+
+set smartcase " ignore case unless search includes uppercase
+set hlsearch " highlight search results
+set incsearch " show search results as you type
