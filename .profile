@@ -1,16 +1,6 @@
 #!/usr/bin/env sh
 # executed by Bourne-compatible login shells.
 
-# Prepend bin directories to PATH if they exist and are not already included
-for dir in /usr/local/sbin "$HOME/.local/bin"; do
-	if [ -d "$dir" ] && case ":$PATH:" in *":$dir:"*) false;; *) true;; esac; then
-		PATH="$dir:$PATH"
-	fi
-done
-unset dir
-
-export PATH
-
 # XDG base directories
 # https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 for dir in "$HOME/.config" "$HOME/.local/share" "$HOME/.local/bin" "$HOME/.local/state" "$HOME/.cache"; do
@@ -34,3 +24,13 @@ export XDG_CACHE_HOME
 # Some programs expect XDG_BIN_DIR instead of XDG_BIN_HOME
 XDG_BIN_DIR="$XDG_BIN_HOME"
 export XDG_BIN_DIR
+
+# Prepend bin directories to PATH if they exist and are not already included
+for dir in /usr/local/sbin "$HOME/.local/bin"; do
+	if [ -d "$dir" ] && case ":$PATH:" in *":$dir:"*) false;; *) true;; esac; then
+		PATH="$dir:$PATH"
+	fi
+done
+unset dir
+
+export PATH
