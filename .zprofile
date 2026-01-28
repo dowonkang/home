@@ -5,7 +5,3 @@ if [ -f "$HOME/.profile" ]; then
 	. "$HOME/.profile"
 fi
 
-if [ -f "$HOME/.zshrc" ]; then
-	# shellcheck disable=1090
-	. "$HOME/.zshrc"
-fi
