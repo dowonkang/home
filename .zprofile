@@ -1,5 +1,9 @@
 #!/usr/bin/env zsh
-eval "$(/opt/homebrew/bin/brew shellenv)"
+
+if [ -f "$HOME/.profile" ]; then
+	# shellcheck disable=1090
+	. "$HOME/.profile"
+fi
 
 if [ -f "$HOME/.zshrc" ]; then
 	# shellcheck disable=1090
