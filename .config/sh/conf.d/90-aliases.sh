@@ -48,7 +48,7 @@ fi
 # git
 if [ "$LANG" != "en_US.UTF-8" ] &&
 	command -v locale >/dev/null 2>&1 &&
-	locale -a | grep --extended-regexp 'en_US\.(utf8|UTF\-8)' >/dev/null; then
+	locale -a | grep --extended-regexp 'en_US.(utf8|UTF-8)' >/dev/null; then
 	alias git='LANG=en_US.UTF-8 git'
 fi
 
