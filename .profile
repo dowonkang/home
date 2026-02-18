@@ -21,6 +21,15 @@ export XDG_STATE_HOME
 XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CACHE_HOME
 
+if [ -z "$XDG_RUNTIME_DIR" ]; then
+	XDG_RUNTIME_DIR=/tmp/$(id -u)-runtime-dir
+	export XDG_RUNTIME_DIR
+	if [ ! -d "$XDG_RUNTIME_DIR" ]; then
+		mkdir -p "$XDG_RUNTIME_DIR"
+		chmod 700 "$XDG_RUNTIME_DIR"
+	fi
+fi
+
 # Some programs expect XDG_BIN_DIR instead of XDG_BIN_HOME
 XDG_BIN_DIR="$XDG_BIN_HOME"
 export XDG_BIN_DIR
