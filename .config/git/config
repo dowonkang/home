@@ -19,7 +19,7 @@
 [core]
 	editor = /usr/bin/vim
 [merge]
-	conflictstyle = zdiff3 # diff3 if git < v2.3
+	conflictstyle = diff3 # zdiff3 if git >= v2.3
 [rebase]
 	autoSquash = true
 	autoStash = true
