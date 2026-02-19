@@ -30,9 +30,11 @@ fi
 
 # man(1)
 if [ -z "$MANPAGER" ]; then
-	if command -v most >/dev/null 2>&1; then
-		MANPAGER="$(command -v most)"
+	if command -v bat >/dev/null 2>&1; then
+		MANPAGER="sh -c 'col -bx | bat -l man -p'"
 		export MANPAGER
+		MANROFFOPT="-c" # for groff man pages compatibility
+		export MANROFFOPT
 	fi
 fi
 
