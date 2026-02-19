@@ -23,8 +23,9 @@ export XDG_CACHE_HOME
 
 # Manual XDG_RUNTIME_DIR setup
 # comment it out when not using a session manager
+# https://docs.voidlinux.org/config/session-management.html#xdg_runtime_dir
 # if [ -z "$XDG_RUNTIME_DIR" ]; then
-# 	XDG_RUNTIME_DIR=/tmp/$(id -u)-runtime-dir
+# 	XDG_RUNTIME_DIR=/run/user/$(id -u)
 # 	export XDG_RUNTIME_DIR
 # 	if [ ! -d "$XDG_RUNTIME_DIR" ]; then
 # 		mkdir -p "$XDG_RUNTIME_DIR"
