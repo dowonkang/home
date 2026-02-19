@@ -1,14 +1,8 @@
 #!/usr/bin/env sh
 
 if [ -z "$EDITOR" ]; then
-	if command -v emacs >/dev/null 2>&1; then
-		EDITOR="$(command -v emacs)"
-	elif command -v nvim >/dev/null 2>&1; then
-		EDITOR="$(command -v nvim)"
-	elif command -v vim >/dev/null 2>&1; then
-		EDITOR="$(command -v vim)"
-	elif command -v vi >/dev/null 2>&1; then
-		EDITOR="$(command -v vi)"
+	if command -v ex >/dev/null 2>&1; then
+		EDITOR="$(command -v ex)"
 	fi
 
 	if [ -n "$EDITOR" ]; then
@@ -17,16 +11,16 @@ if [ -z "$EDITOR" ]; then
 fi
 
 if [ -z "$VISUAL" ]; then
-	if command -v code >/dev/null 2>&1; then
-		VISUAL="$(command -v code)"
-	elif command -v emacs >/dev/null 2>&1; then
-		VISUAL="$(command -v emacs)"
-	elif command -v nvim >/dev/null 2>&1; then
+	if command -v nvim >/dev/null 2>&1; then
 		VISUAL="$(command -v nvim)"
 	elif command -v vim >/dev/null 2>&1; then
 		VISUAL="$(command -v vim)"
 	elif command -v vi >/dev/null 2>&1; then
 		VISUAL="$(command -v vi)"
+	elif command -v nano >/dev/null 2>&1; then
+		VISUAL="$(command -v nano)"
+	elif [ -n "$EDITOR" ]; then
+		VISUAL="$EDITOR"
 	fi
 
 	if [ -n "$VISUAL" ]; then
