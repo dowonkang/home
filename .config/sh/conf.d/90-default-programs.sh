@@ -1,13 +1,13 @@
 #!/usr/bin/env sh
 
 if [ -z "$EDITOR" ]; then
-	if command -v emacs >/dev/null; then
+	if command -v emacs >/dev/null 2>&1; then
 		EDITOR="$(command -v emacs)"
-	elif command -v nvim >/dev/null; then
+	elif command -v nvim >/dev/null 2>&1; then
 		EDITOR="$(command -v nvim)"
-	elif command -v vim >/dev/null; then
+	elif command -v vim >/dev/null 2>&1; then
 		EDITOR="$(command -v vim)"
-	elif command -v vi >/dev/null; then
+	elif command -v vi >/dev/null 2>&1; then
 		EDITOR="$(command -v vi)"
 	fi
 
@@ -17,15 +17,15 @@ if [ -z "$EDITOR" ]; then
 fi
 
 if [ -z "$VISUAL" ]; then
-	if command -v code >/dev/null; then
+	if command -v code >/dev/null 2>&1; then
 		VISUAL="$(command -v code)"
-	elif command -v emacs >/dev/null; then
+	elif command -v emacs >/dev/null 2>&1; then
 		VISUAL="$(command -v emacs)"
-	elif command -v nvim >/dev/null; then
+	elif command -v nvim >/dev/null 2>&1; then
 		VISUAL="$(command -v nvim)"
-	elif command -v vim >/dev/null; then
+	elif command -v vim >/dev/null 2>&1; then
 		VISUAL="$(command -v vim)"
-	elif command -v vi >/dev/null; then
+	elif command -v vi >/dev/null 2>&1; then
 		VISUAL="$(command -v vi)"
 	fi
 
@@ -36,14 +36,14 @@ fi
 
 # man(1)
 if [ -z "$MANPAGER" ]; then
-	if command -v most >/dev/null; then
+	if command -v most >/dev/null 2>&1; then
 		MANPAGER="$(command -v most)"
 		export MANPAGER
 	fi
 fi
 
 if [ -z "$PAGER" ]; then
-	if command -v less >/dev/null; then
+	if command -v less >/dev/null 2>&1; then
 		PAGER="$(command -v less)"
 		export PAGER
 	fi
@@ -51,7 +51,7 @@ fi
 
 # https://github.com/dandavison/delta
 if [ -z "$GIT_PAGER" ]; then
-	if command -v delta >/dev/null; then
+	if command -v delta >/dev/null 2>&1; then
 		GIT_PAGER="$(command -v delta)"
 		export GIT_PAGER
 	fi
