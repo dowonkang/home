@@ -1,14 +1,9 @@
 #!/usr/bin/env sh
 
-if [ -n "$BASH" ]; then
-	if command -v starship >/dev/null 2>&1; then
+if command -v starship >/dev/null 2>&1; then
+	if [ -n "$BASH" ]; then
 		eval "$(starship init bash)"
-	elif [ -f "$HOME/.config/bash_prompt" ]; then
-		# shellcheck disable=1090,1091
-		. "$HOME/.config/bash_prompt"
-	fi
-elif [ -n "$ZSH_VERSION" ]; then
-	if command -v starship >/dev/null 2>&1; then
+	elif [ -n "$ZSH_VERSION" ]; then
 		eval "$(starship init zsh)"
 	fi
 else
