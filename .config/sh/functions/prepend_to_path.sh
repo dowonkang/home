@@ -4,7 +4,7 @@
 prepend_to_path() {
 	new_path="$1"
 
-	if [ -d "$new_path" ] && case ":$PATH:" in *":$new_path:"*) false;; *) true;; esac; then
+	if [ -d "$new_path" ] && case ":$PATH:" in *":$new_path:"*) false ;; *) true ;; esac then
 		PATH="$new_path:$PATH"
 		export PATH
 	fi
