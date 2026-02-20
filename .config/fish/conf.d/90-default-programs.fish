@@ -8,7 +8,10 @@ if test -z "$VISUAL"
     if command -sq nvim
         set -gx VISUAL (command -s nvim)
     else if command -sq vim
-        set -gx VISUAL (command -s vim)
+        set -l vim_path (command -s vim)
+        if test -n "$vim_path"
+            set -gx VISUAL "$vim_path"
+        end
     else if command -sq vi
         set -gx VISUAL (command -s vi)
     else if command -sq nano

@@ -14,7 +14,11 @@ if [ -z "$VISUAL" ]; then
 	if command -v nvim >/dev/null 2>&1; then
 		VISUAL="$(command -v nvim)"
 	elif command -v vim >/dev/null 2>&1; then
-		VISUAL="$(command -v vim)"
+		vim_path="$(command -v vim)"
+		if [ -n "$vim_path" ]; then
+			VISUAL="$vim_path"
+		fi
+		unset vim_path
 	elif command -v vi >/dev/null 2>&1; then
 		VISUAL="$(command -v vi)"
 	elif command -v nano >/dev/null 2>&1; then
